@@ -7,7 +7,7 @@ const authUtils = {
         try {
             const res = await authApi.verifyToken(token);
             return res.user;
-        } catch {
+        } catch (err) {
             return false;
         }
     },

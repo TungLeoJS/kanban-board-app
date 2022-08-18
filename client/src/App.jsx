@@ -24,14 +24,35 @@ export const App = () => {
             <CssBaseline />
             <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={<AuthLayout />}>
-                        <Route path="login" element={<Login />} />
-                        <Route path="signup" element={<Signup />} />
+                    <Route
+                        path='/'
+                        element={<AuthLayout />}
+                    >
+                        <Route
+                            path='login'
+                            element={<Login />}
+                        />
+                        <Route
+                            path='signup'
+                            element={<Signup />}
+                        />
                     </Route>
-                    <Route path="/" element={<AppLayout />}>
-                        <Route index element={<Home />} />
-                        <Route path="boards" element={<Home />} />
-                        <Route path="boards/:d" element={<Board />} />
+                    <Route
+                        path='/'
+                        element={<AppLayout />}
+                    >
+                        <Route
+                            index
+                            element={<Home />}
+                        />
+                        <Route
+                            path='boards'
+                            element={<Home />}
+                        />
+                        <Route
+                            path='boards/:d'
+                            element={<Board />}
+                        />
                     </Route>
                 </Routes>
             </BrowserRouter>

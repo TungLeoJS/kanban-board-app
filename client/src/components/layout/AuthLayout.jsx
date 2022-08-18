@@ -24,7 +24,10 @@ const AuthLayout = () => {
     return loading ? (
         <Loading fullHeight />
     ) : (
-        <Container component="main" maxWidth="xs">
+        <Container
+            component='main'
+            maxWidth='xs'
+        >
             <Box
                 sx={{
                     marginTop: 8,
@@ -37,7 +40,7 @@ const AuthLayout = () => {
                 <img
                     src={assets.images.logoDark}
                     style={{ width: '100px' }}
-                    alt="app-logo"
+                    alt='app-logo'
                 />
                 <Outlet />
             </Box>
