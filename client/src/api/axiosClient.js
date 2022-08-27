@@ -1,12 +1,12 @@
 import axios from 'axios';
 import queryString from 'query-string';
 
-const baseUrl = 'http://127.0.0.1:5000/api/v1';
+const baseURL = 'http://127.0.0.1:5000/api/v1';
 const getToken = () => localStorage.getItem('token');
 const token = getToken();
 
 const axiosClient = axios.create({
-    baseUrl,
+    baseURL,
     paramsSerializer: (params) => queryString.stringify({ params }),
 });
 

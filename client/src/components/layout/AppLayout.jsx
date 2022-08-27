@@ -9,6 +9,7 @@ const AppLayout = () => {
     const navigate = useNavigate();
     const [user, setUser] = useState({});
     const [loading, setLoading] = useState(true);
+    console.log(user);
 
     useEffect(() => {
         const checkAuth = async () => {
