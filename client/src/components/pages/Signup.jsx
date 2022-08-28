@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Button, TextField, Box } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import authApi from '../../api/authClient';
-import { Navigate } from 'react-router-dom';
 
 const Signup = () => {
+    const navigate = useNavigate();
     const [isLoading, setIsLoading] = useState(false);
     const [usernameErrText, setUsernameErrText] = useState('');
     const [passwordErrText, setPasswordErrText] = useState('');
@@ -50,7 +51,7 @@ const Signup = () => {
             });
             setIsLoading(false);
             localStorage.setItem('token', res.token);
-            Navigate('/');
+            navigate('/');
         } catch (err) {
             const errors = err.data.errors;
             errors.forEach((e) => {
