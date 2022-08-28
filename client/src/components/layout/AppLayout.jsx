@@ -4,16 +4,19 @@ import { Outlet, useNavigate } from 'react-router-dom';
 import Loading from '../common/Loading';
 import authUtils from '../../utils/authUtils';
 import Sidebar from '../common/Sidebar';
+import { useDispatch } from 'react-redux';
+import { setUser } from '../../redux/features/userSlice';
 
 const AppLayout = () => {
     const navigate = useNavigate();
-    const [user, setUser] = useState({});
+    const dispatch = useDispatch();
     const [loading, setLoading] = useState(true);
-    console.log(user);
 
     useEffect(() => {
         const checkAuth = async () => {
             const user = await authUtils.isAuthenticated();
+            dispatch(setUser(user));
+
             if (!user) {
                 navigate('/login');
             } else {
